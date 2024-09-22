@@ -8,6 +8,9 @@
   background-color: $sugar;
   border: 1px solid transparent;
   transition: border .4s, color .4s, background-color .4s;
+  @include r($phone) {
+    border-radius: 12px;
+  }
 
   &:hover {
     background-color: transparent;
