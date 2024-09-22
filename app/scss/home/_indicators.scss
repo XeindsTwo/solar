@@ -1,0 +1,44 @@
+.indicators {
+  padding: 152px 0;
+  background-color: $sugar;
+
+  &__top {
+    @include flex-column(14);
+    margin-bottom: 72px;
+  }
+
+  &__subtitle {
+    color: rgba($black, .48);
+  }
+
+  &__list {
+    @include flex-column(32);
+  }
+
+  &__item {
+    @include flex-between-center-gap(60);
+    align-items: flex-end;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba($black, .32);
+  }
+
+  &__left {
+    @include flex-align-center(24);
+  }
+
+  &__name {
+    font-family: $pangram;
+    font-size: 80px;
+    line-height: .95;
+    transform: translateY(-13px);
+  }
+
+  &__text {
+    color: rgba($black, .48);
+    font-family: $pangram;
+    max-width: 525px;
+    width: 100%;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+}

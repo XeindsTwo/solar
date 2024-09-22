@@ -1,0 +1,94 @@
+.menu-btn {
+  height: 44px;
+  width: 44px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  transition: all .4s;
+  background-color: $light-gray;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $deep-purple;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $deep-forest-green;
+    }
+  }
+
+  &:focus {
+    background-color: rgba($deep-purple, .2);
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $white;
+    }
+  }
+
+  &--header {
+    @media (max-width: 980px) {
+      display: flex;
+    }
+    @include r($sm) {
+      margin-left: auto;
+    }
+  }
+
+  &__line,
+  &__line::after,
+  &__line::before {
+    background-color: $midnight-blue;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 2px;
+    transition: all .4s;
+  }
+
+  &__line::after,
+  &__line::before {
+    position: absolute;
+  }
+
+  &__line {
+    position: relative;
+    display: flex;
+
+    &::before {
+      margin-top: -6px;
+    }
+
+    &::after {
+      margin-top: 6px;
+    }
+  }
+
+  &.active {
+    background-color: transparent;
+    border-color: $deep-purple;
+
+    .menu-btn__line {
+      background: transparent;
+      transition: all .4s;
+      transform: rotate(-90deg);
+
+      &::before {
+        margin-top: 0;
+        transform: rotate(-45deg);
+        transition-delay: .4s;
+        background-color: $deep-purple;
+      }
+
+      &::after {
+        margin-top: 0;
+        transform: rotate(45deg);
+        transition-delay: .4s;
+        background-color: $deep-purple;
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.calculator {
+  &__inner {
+    @include flex-between-center-gap(90);
+    min-height: 525px;
+  }
+
+  &__interact {
+    @include flex-column(0);
+    align-self: stretch;
+    align-items: flex-start;
+    max-width: 675px;
+    width: 100%;
+    padding-top: 14px;
+  }
+
+  &__subtext {
+    display: block;
+    margin: 32px 0 30px;
+  }
+
+  &__items {
+    margin-top: auto;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__item {
+    border-left: 1px solid $gray;
+    padding: 8px 0 0;
+  }
+
+  &__number, &__subtitle {
+    padding-left: 16px;
+  }
+
+  &__subtitle {
+    display: block;
+    color: rgba($black, .48);
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+
+  &__bottom {
+    @include flex-between-center-gap(16);
+    margin-bottom: 14px;
+  }
+
+  &__number, &__attr {
+    font-size: 24px;
+    line-height: .95;
+    font-family: $pangram;
+  }
+
+  &__attr {
+    color: rgba($black, .32);
+    padding-right: 16px;
+  }
+
+  &__income {
+    grid-gap: 4px;
+    max-width: 545px;
+    width: 100%;
+    display: grid;
+    align-self: stretch;
+    grid-template-columns: repeat(2, 1fr);
+
+    &-item {
+      @include flex-column(60);
+      justify-content: space-between;
+      border-radius: 14px;
+      background-color: $sugar;
+      padding: 16px;
+
+      &.main {
+        background-color: $green;
+        color: $white;
+        .calculator__income-name {
+          color: $white;
+        }
+      }
+    }
+
+    &-name {
+      line-height: 1.1;
+      color: rgba($black, .48);
+    }
+
+    &-sum {
+      font-size: 48px;
+      line-height: .95;
+      font-family: $pangram;
+      transform: translateY(-4px);
+    }
+  }
+}

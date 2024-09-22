@@ -1,0 +1,54 @@
+.steps {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    @include flex-column(0);
+    min-height: 585px;
+    padding: 20px;
+
+    &:first-child {
+      border-left: 1px solid $gray;
+      border-right: 1px solid $gray;
+    }
+
+    &:last-child {
+      border-left: 1px solid $gray;
+    }
+
+    img {
+      @include objectCoverBg;
+    }
+  }
+
+  &__head {
+    @include flex-column(0);
+    min-height: 170px;
+  }
+
+  &__number, &__name {
+    font-weight: 500;
+    font-family: $pangram;
+  }
+
+  &__number {
+    display: block;
+    margin-bottom: 18px;
+    line-height: .95;
+    font-size: 80px;
+  }
+
+  &__name {
+    font-size: 24px;
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin-top: auto;
+    color: rgba($black, .48);
+  }
+}

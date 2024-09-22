@@ -1,0 +1,35 @@
+.noUi-tooltip {
+  display: none;
+}
+
+.noUi-handle.noUi-handle-lower {
+  width: 18px;
+  height: 6px;
+  border-radius: 600px;
+  border: none;
+  background: $green;
+  cursor: pointer;
+  box-shadow: none;
+  top: -2px;
+  right: -18px;
+  transform: translateX(-50%);
+
+  &::before, &::after {
+    display: none;
+  }
+}
+
+.noUi-horizontal {
+  height: 2px;
+  cursor: pointer;
+}
+
+.noUi-target {
+  border: none;
+  box-shadow: none;
+  background: rgba($black, .3);
+}
+
+.noUi-connect {
+  background: $green;
+}

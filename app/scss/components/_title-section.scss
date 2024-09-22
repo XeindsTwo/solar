@@ -1,0 +1,18 @@
+.title-section {
+  font-size: 80px;
+  font-weight: 500;
+  line-height: .95;
+  font-family: $pangram;
+
+  &.center {
+    text-align: center;
+  }
+
+  &.bottom {
+    margin-bottom: 72px;
+  }
+
+  &--small {
+    font-size: 48px;
+  }
+}
