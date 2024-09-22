@@ -1,14 +1,38 @@
 .btn {
-  align-items: center;
-  display: flex;
-  gap: 8px;
+  @include flex-align-center(8);
   max-width: max-content;
-  font-weight: 700;
-  line-height: 1.3;
-  text-transform: uppercase;
-  justify-content: center;
+  padding: 17px 20px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: $sugar;
   border: 1px solid transparent;
-  border-radius: 32px;
-  padding: 12px 24px;
-  transition: background-color .4s, border .4s, color .4s;
+  transition: border .4s, color .4s, background-color .4s;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $black;
+  }
+
+  &:focus {
+    background-color: $black;
+    color: $white;
+
+    svg path {
+      fill: $white;
+    }
+  }
+
+  &.white {
+    background: $white;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:focus {
+      background-color: $green;
+      border-color: transparent;
+    }
+  }
 }

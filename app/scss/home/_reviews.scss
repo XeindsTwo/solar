@@ -12,31 +12,6 @@
     color: rgba($black, .48);
   }
 
-  &__btn {
-    @include flex-align-center(8);
-    padding: 17px 20px;
-    border-radius: 16px;
-    font-size: 14px;
-    font-weight: 600;
-    background-color: $sugar;
-    border: 1px solid transparent;
-    transition: border .4s, color .4s, background-color .4s;
-
-    &:hover {
-      background-color: transparent;
-      border-color: $black;
-    }
-
-    &:focus {
-      background-color: $black;
-      color: $white;
-
-      svg path {
-        fill: $white;
-      }
-    }
-  }
-
   &__item {
     padding: 16px;
     background-color: $sugar;

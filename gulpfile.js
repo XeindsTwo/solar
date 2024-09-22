@@ -90,6 +90,7 @@ function clearDist() {
 function scripts() {
   return src([
     'node_modules/swiper/swiper-bundle.min.js',
+    'node_modules/nouislider/dist/nouislider.min.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))

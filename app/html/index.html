@@ -11,5 +11,20 @@ title: 'Solar Panel'
   @include('home/_reviews.html')
 </main>
 @include('components/_footer.html')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="js/main.min.js" type="module"></script>
+<script>
+  !function(a,m,o,c,r,m){
+    a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},
+      a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},
+      a[o+r]({id:"1406498",hash:"ae7eae7fdddca84b3bbb637b5741b509",locale:"ru"}),
+      a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}
+  }(window,0,"amo_forms_","params","load","loaded");
+
+  // Ждем, пока скрипт загрузится
+  window.addEventListener('load', function() {
+    document.getElementById('leave-request').addEventListener('click', function() {
+      amo_forms_.load({id: "1406498"});
+    });
+  });
+</script>

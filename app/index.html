@@ -5,58 +5,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Описание сайта">
+  <meta name="description"
+        content="Инвестируйте в солнечные фермы и получайте стабильный доход от 47% годовых.
+        Станьте частью зеленой энергетики и оставьте заявку на участие!">
   <meta http-equiv="content-type" content="public, max-age=3600">
   <meta name="theme-color" content="#fff">
   <title>Solar Panel</title>
   <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body class="body">
 
-<header class="header">
+<header class="header" id="header">
   <div class="container">
     <div class="header__inner">
+      <div class="header__left">
+        <img class="header__logo" src="images/logo.svg" height="24" width="132" alt="логотип">
+      </div>
       <nav class="header__nav">
         <ul class="header__list">
           <li>
-            <a class="header__link desktop" href="#prizes">Призы</a>
+            <a class="header__link desktop" href="#calculator">Калькулятор</a>
           </li>
           <li>
-            <a class="header__link desktop" href="#faq">Условия конкурса</a>
+            <a class="header__link desktop" href="#faq">Гарантии</a>
           </li>
           <li>
-            <a class="header__link desktop" href="#price">Стоимость</a>
+            <a class="header__link desktop" href="#indicators">Статистика</a>
           </li>
           <li>
-            <a class="header__link desktop" href="#participation">Принять участие</a>
+            <a class="header__link desktop" href="#steps">Как это работает</a>
+          </li>
+          <li>
+            <a class="header__link desktop" href="#reviews">Отзывы</a>
           </li>
         </ul>
       </nav>
-      <img class="header__logo" src="images/logo.svg" height="59" width="178" alt="логотип">
       <div class="header__right">
-        <a class="header__contact tooltip--contacts desktop" href="#community">
-          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px"
-               width="200px" xmlns="http://www.w3.org/2000/svg">
-            <path fill="none" d="M0 0h24v24H0V0z"></path>
-            <path
-                d="M11 23.59v-3.6c-5.01-.26-9-4.42-9-9.49C2 5.26 6.26 1 11.5 1S21 5.26 21 10.5c0 4.95-3.44 9.93-8.57 12.4l-1.43.69zM11.5 3C7.36 3 4 6.36 4 10.5S7.36 18 11.5 18H13v2.3c3.64-2.3 6-6.08 6-9.8C19 6.36 15.64 3 11.5 3zm-1 11.5h2v2h-2zm2-1.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"></path>
-          </svg>
-          <path
-              d="M19.0049 2C20.1068 2 21 2.89821 21 3.9908V20.0092C21 21.1087 20.1074 22 19.0049 22H3V2H19.0049ZM7 4H5V20H7V4ZM19 4H9V20H19V4ZM14 8L18 12H15V16H13V12H10L14 8ZM24 12V16H22V12H24ZM24 6V10H22V6H24Z"></path>
-          </svg>
-          Контакты
-        </a>
-        <button class="tooltip" type="button" data-tooltip="header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-                d="M7.32374 11.7963C7.39366 11.866 7.44913 11.9488 7.48699 12.04C7.52484 12.1311 7.54433 12.2289 7.54433 12.3276C7.54433 12.4263 7.52484 12.524 7.48699 12.6152C7.44913 12.7064 7.39366 12.7892 7.32374 12.8588L7.00374 13.1788C6.66405 13.5198 6.26014 13.79 5.81536 13.9739C5.37058 14.1578 4.89377 14.2516 4.41249 14.2501C3.68769 14.2503 2.97912 14.0356 2.3764 13.633C1.77368 13.2304 1.30391 12.6582 1.02651 11.9886C0.749115 11.3189 0.676559 10.5821 0.818022 9.87125C0.959486 9.1604 1.30861 8.50747 1.82124 7.99509L3.99311 5.82321C4.45507 5.36132 5.03209 5.0313 5.66443 4.86731C6.29677 4.70332 6.96146 4.71132 7.58967 4.89049C8.21788 5.06966 8.78678 5.41348 9.23748 5.88637C9.68818 6.35925 10.0043 6.944 10.1531 7.58009C10.1778 7.6768 10.1829 7.77746 10.1681 7.87617C10.1533 7.97488 10.119 8.06965 10.0672 8.15493C10.0153 8.24021 9.94698 8.31428 9.86614 8.37281C9.78529 8.43133 9.69358 8.47313 9.59637 8.49576C9.49917 8.51839 9.39842 8.52138 9.30004 8.50458C9.20166 8.48777 9.10763 8.4515 9.02345 8.39789C8.93926 8.34427 8.86663 8.27439 8.8098 8.19235C8.75297 8.1103 8.71309 8.01774 8.69249 7.92009C8.60418 7.54461 8.4172 7.19952 8.15086 6.92051C7.88452 6.6415 7.54849 6.43869 7.17752 6.33304C6.80654 6.2274 6.41409 6.22275 6.04071 6.31958C5.66734 6.41641 5.32661 6.61121 5.05374 6.88384L2.88186 9.05571C2.57912 9.35821 2.37288 9.74369 2.28923 10.1634C2.20557 10.5831 2.24827 11.0182 2.41191 11.4137C2.57555 11.8091 2.85278 12.1472 3.20855 12.385C3.56432 12.6229 3.98264 12.75 4.41061 12.7501C4.69497 12.7509 4.97666 12.6953 5.23939 12.5865C5.50212 12.4777 5.74067 12.3179 5.94124 12.1163L6.26061 11.7963C6.3303 11.7263 6.41313 11.6708 6.50435 11.6329C6.59558 11.5949 6.69339 11.5754 6.79217 11.5754C6.89096 11.5754 6.98877 11.5949 7.07999 11.6329C7.17121 11.6708 7.25405 11.7263 7.32374 11.7963ZM14.1769 2.82321C13.4895 2.13603 12.5573 1.75 11.5853 1.75C10.6133 1.75 9.68114 2.13603 8.99374 2.82321L8.67436 3.14259C8.53346 3.28348 8.45431 3.47458 8.45431 3.67384C8.45431 3.87309 8.53346 4.06419 8.67436 4.20509C8.81526 4.34598 9.00635 4.42514 9.20561 4.42514C9.40487 4.42514 9.59596 4.34598 9.73686 4.20509L10.0569 3.88509C10.463 3.47897 11.0138 3.25082 11.5881 3.25082C12.1624 3.25082 12.7132 3.47897 13.1194 3.88509C13.5255 4.2912 13.7536 4.84201 13.7536 5.41634C13.7536 5.99067 13.5255 6.54147 13.1194 6.94759L10.9437 9.11634C10.7432 9.31797 10.5047 9.47781 10.2419 9.5866C9.97919 9.69539 9.69748 9.75096 9.41311 9.75009C8.9253 9.74974 8.4519 9.58461 8.0697 9.28149C7.6875 8.97836 7.41891 8.55501 7.30749 8.08009C7.2624 7.88631 7.14218 7.71839 6.97328 7.61325C6.80438 7.50811 6.60063 7.47437 6.40686 7.51946C6.21309 7.56455 6.04516 7.68476 5.94002 7.85366C5.83488 8.02256 5.80115 8.22631 5.84624 8.42009C6.03443 9.22438 6.4888 9.94152 7.13567 10.4552C7.78254 10.9689 8.58397 11.249 9.40999 11.2501H9.41311C9.89462 11.2514 10.3716 11.1572 10.8165 10.973C11.2614 10.7888 11.6653 10.5183 12.005 10.177L14.1769 8.00509C14.5172 7.66487 14.7871 7.26094 14.9713 6.81638C15.1554 6.37183 15.2502 5.89534 15.2502 5.41415C15.2502 4.93295 15.1554 4.45647 14.9713 4.01191C14.7871 3.56736 14.5172 3.16343 14.1769 2.82321Z"
-                fill="#fff"/>
-          </svg>
-          Поделиться
-        </button>
-        <span class="tooltip__copy header" data-tooltip="header">Скопировано!</span>
+        <a class="header__btn desktop" href="#calculator">Рассчитать доход</a>
       </div>
       <button class="menu-btn menu-btn--header" type="button">
         <span class="menu-btn__line"></span>
@@ -119,17 +106,43 @@
   <div class="container">
     <div class="home__inner">
       <h1 class="home__title">
-        Самый масштабный <span>вокальный</span> конкурс
+        Арендуйте солнечные фермы
       </h1>
-      <a class="home__btn desktop" href="#faq">Узнать подробнее</a>
-      <p class="home__text">
-        Онлайн отбор, финальный концерт лучших участников. Уникальные возможности для всех участников!
-      </p>
+      <div class="home__info">
+        <p class="home__text">
+          Станьте частью зеленой энергетики и начните получать стабильный доход от солнечной
+          фермы уже сегодня, и получите стабильный доход!
+        </p>
+        <button class="btn white" type="button">
+          Оставить заявку
+          <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M5.13672 14.7959C4.92253 14.7959 4.75391 14.7253 4.63086 14.584C4.51237 14.4473 4.45312 14.2604 4.45312 14.0234V12.0684H3.94043C3.29329 12.0684 2.73047 11.9385 2.25195 11.6787C1.77344 11.4189 1.40202 11.0452 1.1377 10.5576C0.87793 10.07 0.748047 9.48438 0.748047 8.80078V3.44824C0.748047 2.76465 0.875651 2.17904 1.13086 1.69141C1.39062 1.20378 1.76432 0.830078 2.25195 0.570312C2.73958 0.30599 3.32747 0.173828 4.01562 0.173828H12.9775C13.6702 0.173828 14.2581 0.30599 14.7412 0.570312C15.2288 0.830078 15.6003 1.20378 15.8555 1.69141C16.1152 2.17904 16.2451 2.76465 16.2451 3.44824V8.80078C16.2451 9.48438 16.1152 10.07 15.8555 10.5576C15.6003 11.0452 15.2288 11.4189 14.7412 11.6787C14.2581 11.9385 13.6702 12.0684 12.9775 12.0684H8.54785L6.01855 14.3311C5.84082 14.4951 5.68587 14.6136 5.55371 14.6865C5.42611 14.7594 5.28711 14.7959 5.13672 14.7959Z"
+                fill="#1B1A1A"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="home__video">
+      <a class="home__link" href="https://vimeo.com/259411563" data-fancybox="video-gallery">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <g filter="url(#filter0_b_1_93)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM44.5034 64.8826L64.6387 51.6722C65.8425 50.8824 65.8425 49.1176 64.6387 48.3278L44.5034 35.1174C43.1733 34.2448 41.4063 35.1989 41.4063 36.7896V63.2104C41.4063 64.8011 43.1733 65.7552 44.5034 64.8826Z" fill="white" fill-opacity="0.5"/>
+          </g>
+          <defs>
+            <filter id="filter0_b_1_93" x="-14" y="-14" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feGaussianBlur in="BackgroundImageFix" stdDeviation="7"/>
+              <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_93"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_93" result="shape"/>
+            </filter>
+          </defs>
+        </svg>
+      </a>
     </div>
   </div>
-  <img class="home__decor" src="images/home-decor.webp" alt="декор">
 </section>
-  <section class="steps">
+  <section class="steps indent" id="steps">
   <div class="container">
     <h2 class="title-section center bottom">Как это <br> работает?</h2>
     <ul class="steps__list">
@@ -179,7 +192,7 @@
     </ul>
   </div>
 </section>
-  <section class="indicators indent">
+  <section class="indicators indent" id="indicators">
   <div class="container">
     <div class="indicators__top">
       <span class="indicators__subtitle">Cтатистика с 2023г. по 2024г.</span>
@@ -231,7 +244,7 @@
       <div class="calculator__interact">
         <h2 class="title-section title-section--small">Калькулятор доходности</h2>
         <p class="calculator__subtext">Минимальная сумма вложения — 500 $</p>
-        <button class="reviews__btn" type="button">
+        <button class="btn" type="button">
           Оставить заявку
           <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -261,19 +274,19 @@
       <ul class="calculator__income">
         <li class="calculator__income-item main">
           <p class="calculator__income-name">В конце периода</p>
-          <p class="calculator__income-sum">890 000 $</p>
+          <p class="calculator__income-sum" id="calc_end_period">890 000 $</p>
         </li>
         <li class="calculator__income-item">
           <p class="calculator__income-name">Доход в день</p>
-          <p class="calculator__income-sum">45 000 $</p>
+          <p class="calculator__income-sum" id="calc_day">45 000 $</p>
         </li>
         <li class="calculator__income-item">
           <p class="calculator__income-name">Доход в месяц</p>
-          <p class="calculator__income-sum">245 000 $</p>
+          <p class="calculator__income-sum" id="calc_mounth">245 000 $</p>
         </li>
         <li class="calculator__income-item">
           <p class="calculator__income-name">Годовой доход</p>
-          <p class="calculator__income-sum">678 000 $</p>
+          <p class="calculator__income-sum" id="calc_year">678 000 $</p>
         </li>
       </ul>
     </div>
@@ -286,7 +299,7 @@
       <p class="reviews__text">
         Реальный опыт, мнения и впечатления наших партнеров о совместной работе и инвестициях в проект
       </p>
-      <button class="reviews__btn" type="button">
+      <button class="btn" type="button" id="leave-request">
         Оставить заявку
         <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -300,51 +313,25 @@
         <div class="swiper-slide">
           <div class="reviews__item">
             <div class="reviews__head">
-              <span class="reviews__name">Алексей Иванов</span>
-              <span class="reviews__exp">Инвестор с опытом</span>
+              <span class="reviews__name">Александр Крылов</span>
+              <span class="reviews__exp">Новичок без опыта</span>
             </div>
             <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <span class="reviews__title">
-        Я вложился в солнечные панели с надеждой на стабильный доход, и не ошибся.
+        Отличное начало для новых инвесторов!
       </span>
             <p class="reviews__description">
-              Мои инвестиции начали приносить регулярные выплаты уже с первого месяца. Считаю, что это один
-              из самых надежных и экологичных способов вложений в моей жизни, за свою память!
+              Первое вложение — и сразу хорошие результаты. Рад, что выбрал именно солнечные
+              панели. Проект понятный и перспективный.
             </p>
             <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <ul class="reviews__turnover">
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 124,200</p>
+                <p class="reviews__sum">1,200 $</p>
                 <p class="reviews__attr">Вложения</p>
               </li>
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 78,700</p>
-                <p class="reviews__attr">Доход</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="reviews__item">
-            <div class="reviews__head">
-              <span class="reviews__name">Morphism Agency</span>
-              <span class="reviews__exp">1 год опыта</span>
-            </div>
-            <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
-            <span class="reviews__title">
-        Я вложился в солнце.
-      </span>
-            <p class="reviews__description">
-              Это было самое лучшее вложение в моей жизни, за свою память!
-            </p>
-            <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
-            <ul class="reviews__turnover">
-              <li class="reviews__attachments">
-                <p class="reviews__sum">$ 23,100</p>
-                <p class="reviews__attr">Вложения</p>
-              </li>
-              <li class="reviews__attachments">
-                <p class="reviews__sum">$ 43,200</p>
+                <p class="reviews__sum">846 $</p>
                 <p class="reviews__attr">Доход</p>
               </li>
             </ul>
@@ -354,24 +341,24 @@
           <div class="reviews__item">
             <div class="reviews__head">
               <span class="reviews__name">Алексей Иванов</span>
-              <span class="reviews__exp">Инвестор с опытом</span>
+              <span class="reviews__exp">Инвестор с опытом </span>
             </div>
             <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <span class="reviews__title">
         Я вложился в солнечные панели с надеждой на стабильный доход, и не ошибся.
       </span>
             <p class="reviews__description">
-              Мои инвестиции начали приносить регулярные выплаты уже с первого месяца. Считаю, что это один
-              из самых надежных и экологичных способов вложений в моей жизни, за свою память!
+              Мои инвестиции начали приносить регулярные выплаты уже с первого месяца. Считаю, что это один из
+              самых надежных и экологичных способов вложений в моей жизни, за свою память!
             </p>
             <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <ul class="reviews__turnover">
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 124,200</p>
+                <p class="reviews__sum">124,200 $</p>
                 <p class="reviews__attr">Вложения</p>
               </li>
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 78,700</p>
+                <p class="reviews__sum">78,700 $</p>
                 <p class="reviews__attr">Доход</p>
               </li>
             </ul>
@@ -380,25 +367,25 @@
         <div class="swiper-slide">
           <div class="reviews__item">
             <div class="reviews__head">
-              <span class="reviews__name">Алексей Иванов</span>
-              <span class="reviews__exp">Инвестор с опытом</span>
+              <span class="reviews__name">Елена Зайцева</span>
+              <span class="reviews__exp">Трейдер</span>
             </div>
             <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <span class="reviews__title">
-        Я вложился в солнечные панели с надеждой на стабильный доход, и не ошибся.
+        Лучшее вложение за последние годы!
       </span>
             <p class="reviews__description">
-              Мои инвестиции начали приносить регулярные выплаты уже с первого месяца. Считаю, что это один
-              из самых надежных и экологичных способов вложений в моей жизни, за свою память!
+              Стабильная прибыль и надёжные партнёры — именно то, что я искала. Уже имею планы на дальнейшее расширение
+              инвестиций в этот сектор.
             </p>
             <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <ul class="reviews__turnover">
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 124,200</p>
+                <p class="reviews__sum">65,800 $</p>
                 <p class="reviews__attr">Вложения</p>
               </li>
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 78,700</p>
+                <p class="reviews__sum">67,866 $</p>
                 <p class="reviews__attr">Доход</p>
               </li>
             </ul>
@@ -407,25 +394,24 @@
         <div class="swiper-slide">
           <div class="reviews__item">
             <div class="reviews__head">
-              <span class="reviews__name">Алексей Иванов</span>
-              <span class="reviews__exp">Инвестор с опытом</span>
+              <span class="reviews__name">Иван Сидоров</span>
+              <span class="reviews__exp">Начинающий инвестор</span>
             </div>
             <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <span class="reviews__title">
-        Я вложился в солнечные панели с надеждой на стабильный доход, и не ошибся.
+        Надежный и экологичный проект
       </span>
             <p class="reviews__description">
-              Мои инвестиции начали приносить регулярные выплаты уже с первого месяца. Считаю, что это один
-              из самых надежных и экологичных способов вложений в моей жизни, за свою память!
+              Вложил немного, но результат оказался приятным. Для начинающих это хороший способ войти в мир инвестиций.
             </p>
             <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <ul class="reviews__turnover">
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 124,200</p>
+                <p class="reviews__sum">15,400 $</p>
                 <p class="reviews__attr">Вложения</p>
               </li>
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 78,700</p>
+                <p class="reviews__sum">8,180 $</p>
                 <p class="reviews__attr">Доход</p>
               </li>
             </ul>
@@ -434,24 +420,24 @@
         <div class="swiper-slide">
           <div class="reviews__item">
             <div class="reviews__head">
-              <span class="reviews__name">Morphism Agency</span>
-              <span class="reviews__exp">1 год опыта</span>
+              <span class="reviews__name">Егор Михайлов</span>
+              <span class="reviews__exp">Начинающий инвестор</span>
             </div>
             <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <span class="reviews__title">
-        Я вложился в солнце.
-      </span>
+Маленький вклад с большой прибылью!      </span>
             <p class="reviews__description">
-              Это было самое лучшее вложение в моей жизни, за свою память!
+              Не ожидал, что даже с небольшим вложением можно что-то заработать. Это мой первый шаг в инвестициях, и он
+              был успешным.
             </p>
             <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <ul class="reviews__turnover">
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 23,100</p>
+                <p class="reviews__sum">500 $</p>
                 <p class="reviews__attr">Вложения</p>
               </li>
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 43,200</p>
+                <p class="reviews__sum">352 $</p>
                 <p class="reviews__attr">Доход</p>
               </li>
             </ul>
@@ -460,25 +446,25 @@
         <div class="swiper-slide">
           <div class="reviews__item">
             <div class="reviews__head">
-              <span class="reviews__name">Алексей Иванов</span>
-              <span class="reviews__exp">Инвестор с опытом</span>
+              <span class="reviews__name">Сергей Федоров</span>
+              <span class="reviews__exp">Венчурный инвестор</span>
             </div>
             <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <span class="reviews__title">
-        Я вложился в солнечные панели с надеждой на стабильный доход, и не ошибся.
+        Надежный партнёр для крупных сделок
       </span>
             <p class="reviews__description">
-              Мои инвестиции начали приносить регулярные выплаты уже с первого месяца. Считаю, что это один
-              из самых надежных и экологичных способов вложений в моей жизни, за свою память!
+              Серьёзный подход и хорошие условия. Доволен тем, как управляются мои инвестиции. Буду продолжать
+              сотрудничество.
             </p>
             <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <ul class="reviews__turnover">
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 124,200</p>
+                <p class="reviews__sum">120,000 $</p>
                 <p class="reviews__attr">Вложения</p>
               </li>
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 78,700</p>
+                <p class="reviews__sum">50,760 $</p>
                 <p class="reviews__attr">Доход</p>
               </li>
             </ul>
@@ -487,24 +473,51 @@
         <div class="swiper-slide">
           <div class="reviews__item">
             <div class="reviews__head">
-              <span class="reviews__name">Morphism Agency</span>
-              <span class="reviews__exp">1 год опыта</span>
+              <span class="reviews__name">Виктор Сурков</span>
+              <span class="reviews__exp">Инвестор-новичок</span>
             </div>
             <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <span class="reviews__title">
-        Я вложился в солнце.
+        Превосходный результат
       </span>
             <p class="reviews__description">
-              Это было самое лучшее вложение в моей жизни, за свою память!
+              Долго выбирал первый проект для вложений, и не прогадал. Результат радует, всё идёт по плану.
             </p>
             <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
             <ul class="reviews__turnover">
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 23,100</p>
+                <p class="reviews__sum">45,600 $</p>
                 <p class="reviews__attr">Вложения</p>
               </li>
               <li class="reviews__attachments">
-                <p class="reviews__sum">$ 43,200</p>
+                <p class="reviews__sum">30,136 $</p>
+                <p class="reviews__attr">Доход</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="reviews__item">
+            <div class="reviews__head">
+              <span class="reviews__name">Олег Романов</span>
+              <span class="reviews__exp">Крупный инвестор</span>
+            </div>
+            <img class="reviews__img" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
+            <span class="reviews__title">
+        Будущее начинается здесь!
+      </span>
+            <p class="reviews__description">
+              Для меня это долгосрочная стратегия. Вижу большой потенциал в развитии этого рынка и
+              планирую расширять своё участие.
+            </p>
+            <img class="reviews__img right" src="images/icons/quote.svg" width="23" height="16" alt="декор иконка">
+            <ul class="reviews__turnover">
+              <li class="reviews__attachments">
+                <p class="reviews__sum">190,500 $</p>
+                <p class="reviews__attr">Вложения</p>
+              </li>
+              <li class="reviews__attachments">
+                <p class="reviews__sum">176,735 $</p>
                 <p class="reviews__attr">Доход</p>
               </li>
             </ul>
@@ -524,30 +537,42 @@
       <nav class="footer__nav">
         <ul class="footer__list">
           <li>
-            <a class="footer__link desktop" href="#home">Главная</a>
+            <a class="footer__link desktop" href="#header">Главная</a>
           </li>
           <li>
-            <a class="footer__link desktop" href="#about">Калькулятор</a>
+            <a class="footer__link desktop" href="#calculator">Калькулятор</a>
           </li>
           <li>
             <a class="footer__link desktop" href="#faq">Гарантии</a>
           </li>
           <li>
-            <a class="footer__link desktop" href="#prizes">Статистика</a>
+            <a class="footer__link desktop" href="#indicators">Статистика</a>
           </li>
           <li>
-            <a class="footer__link desktop" href="#price">Как это работает</a>
-          </li>
-          <li>
-            <a class="footer__link desktop" href="#price">Отзывы</a>
+            <a class="footer__link desktop" href="#steps">Как это работает</a>
           </li>
         </ul>
       </nav>
       <div class="footer__right">
-        <a class="footer__btn" href="#home">Рассчитать доход</a>
+        <a class="footer__btn desktop" href="#calculator">Рассчитать доход</a>
       </div>
     </div>
   </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="js/main.min.js" type="module"></script>
+<script>
+  !function(a,m,o,c,r,m){
+    a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},
+      a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},
+      a[o+r]({id:"1406498",hash:"ae7eae7fdddca84b3bbb637b5741b509",locale:"ru"}),
+      a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}
+  }(window,0,"amo_forms_","params","load","loaded");
+
+  // Ждем, пока скрипт загрузится
+  window.addEventListener('load', function() {
+    document.getElementById('leave-request').addEventListener('click', function() {
+      amo_forms_.load({id: "1406498"});
+    });
+  });
+</script>

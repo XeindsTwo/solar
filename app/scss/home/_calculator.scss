@@ -43,7 +43,7 @@
 
   &__bottom {
     @include flex-between-center-gap(16);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   &__number, &__attr {
