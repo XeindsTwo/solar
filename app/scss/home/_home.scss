@@ -35,8 +35,8 @@
     @include bg;
     border-radius: 40px;
     min-height: 750px;
-    background-image: url("../../images/video.jpg");
-    box-shadow: 61px 574px 162px 0px rgba(69, 69, 69, 0.00), 39px 367px 148px 0px rgba(69, 69, 69, 0.01), 22px 207px 125px 0px rgba(69, 69, 69, 0.05), 10px 92px 92px 0px rgba(69, 69, 69, 0.09);
+    background-image: url("../images/video.webp");
+    box-shadow: 61px 574px 162px 0 rgba(69, 69, 69, 0.00), 39px 367px 148px 0 rgba(69, 69, 69, 0.01), 22px 207px 125px 0 rgba(69, 69, 69, 0.05), 10px 92px 92px 0 rgba(69, 69, 69, 0.09);
   }
 
   &__link {

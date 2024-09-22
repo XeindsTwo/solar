@@ -5,7 +5,7 @@ export function scrollToSection(event) {
 
   let targetOffset;
 
-  if (targetId === 'indicators') {
+  if (targetId === 'indicators' || targetId === 'guarantees') {
     targetOffset = targetElement.offsetTop;
   } else {
     targetOffset = targetElement.offsetTop - 30;

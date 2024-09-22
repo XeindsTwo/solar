@@ -1,0 +1,66 @@
+.guarantees {
+  background-color: $sugar;
+  padding: 142px 0 152px;
+
+  &__title {
+    max-width: 1000px;
+    margin: 0 auto 92px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 152px 16px;
+  }
+
+  &__item {
+    @include flex-column(30);
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 680px;
+  }
+
+  &__name {
+    font-size: 48px;
+    font-family: $pangram;
+    line-height: .95;
+    font-weight: 500;
+    margin-right: auto;
+
+    &.small {
+      max-width: 465px;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+  }
+
+  &__text {
+    line-height: 1.1;
+    font-size: 24px;
+    max-width: 580px;
+    margin-right: auto;
+    color: rgba($black, .48);
+  }
+
+  &__card {
+    grid-column: span 2;
+  }
+
+  &__info {
+    @include flex-column(34);
+    max-width: 530px;
+    width: 100%;
+    margin-left: auto;
+    margin-bottom: 72px;
+  }
+
+  &__subtext {
+    color: rgba($black, .48);
+    max-width: 465px;
+  }
+}
