@@ -177,6 +177,11 @@
 
   .swiper {
     overflow: visible;
+    @include r($lg) {
+      overflow-x: hidden;
+      padding: 0 21px;
+      margin: 0 -21px;
+    }
   }
 
   .swiper-slide {
