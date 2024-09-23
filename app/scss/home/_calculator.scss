@@ -2,6 +2,31 @@
   &__inner {
     @include flex-between-center-gap(90);
     min-height: 525px;
+    @media (max-width: 1260px) {
+      gap: 80px;
+      min-height: 500px;
+    }
+    @media (max-width: 1100px) {
+      gap: 70px;
+      min-height: 480px;
+    }
+    @media (max-width: 1060px) {
+      min-height: 520px;
+    }
+    @include r($lg) {
+      min-height: 500px;
+    }
+    @media (max-width: 830px) {
+      flex-direction: column;
+      min-height: auto;
+      gap: 40px;
+    }
+    @include r($sm) {
+      gap: 35px;
+    }
+    @include r($phone) {
+      gap: 30px;
+    }
   }
 
   &__interact {
@@ -11,11 +36,27 @@
     max-width: 675px;
     width: 100%;
     padding-top: 14px;
+    @include r($lg) {
+      padding-top: 0;
+    }
+    @media (max-width: 895px) {
+      max-width: 340px;
+    }
+    @media (max-width: 830px) {
+      max-width: 540px;
+    }
+    @include r($sm) {
+      max-width: 490px;
+    }
   }
 
   &__subtext {
     display: block;
     margin: 32px 0 30px;
+    @media (max-width: 395px) {
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
   }
 
   &__items {
@@ -23,6 +64,14 @@
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 1060px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 35px;
+      margin-bottom: 6px;
+    }
+    @media (max-width: 830px) {
+      margin-top: 60px;
+    }
   }
 
   &__item {
@@ -32,6 +81,12 @@
 
   &__number, &__subtitle {
     padding-left: 16px;
+    @media (max-width: 910px) {
+      padding-left: 14px;
+    }
+    @include r($phone) {
+      padding-left: 12px;
+    }
   }
 
   &__subtitle {
@@ -39,6 +94,12 @@
     color: rgba($black, .48);
     line-height: 1.1;
     margin-bottom: 32px;
+    @media (max-width: 1060px) {
+      margin-bottom: 22px;
+    }
+    @include r($phone) {
+      font-size: 15px;
+    }
   }
 
   &__bottom {
@@ -50,11 +111,23 @@
     font-size: 24px;
     line-height: .95;
     font-family: $pangram;
+    @media (max-width: 1100px) {
+      font-size: 22px;
+    }
+    @include r($lg) {
+      font-size: 20px;
+    }
+    @include r($phone) {
+      font-size: 18px;
+    }
   }
 
   &__attr {
     color: rgba($black, .32);
     padding-right: 16px;
+    @media (max-width: 1060px) {
+      padding-right: 4px;
+    }
   }
 
   &__income {
@@ -64,6 +137,12 @@
     display: grid;
     align-self: stretch;
     grid-template-columns: repeat(2, 1fr);
+    @include r($desktop) {
+      max-width: 500px;
+    }
+    @media (max-width: 830px) {
+      max-width: 100%;
+    }
 
     &-item {
       @include flex-column(60);
@@ -71,10 +150,19 @@
       border-radius: 14px;
       background-color: $sugar;
       padding: 16px;
+      @media (max-width: 830px) {
+        gap: 45px;
+        border-radius: 10px;
+      }
+      @include r($phone) {
+        padding: 15px 13px;
+        gap: 60px;
+      }
 
       &.main {
         background-color: $green;
         color: $white;
+
         .calculator__income-name {
           color: $white;
         }
@@ -84,6 +172,12 @@
     &-name {
       line-height: 1.1;
       color: rgba($black, .48);
+      @include r($sm) {
+        font-size: 15px;
+      }
+      @include r($phone) {
+        font-size: 14px;
+      }
     }
 
     &-sum {
@@ -91,6 +185,31 @@
       line-height: .95;
       font-family: $pangram;
       transform: translateY(-4px);
+      @include r($desktop) {
+        font-size: 42px;
+      }
+      @media (max-width: 1100px) {
+        font-size: 38px;
+      }
+      @include r($lg) {
+        font-size: 32px;
+        line-height: 1;
+      }
+      @media (max-width: 910px) {
+        font-size: 30px;
+      }
+      @include r($sm) {
+        font-size: 26px;
+      }
+      @include r($phone) {
+        font-size: 24px;
+      }
+      @media (max-width: 375px) {
+        font-size: 23px;
+      }
+      @media (max-width: 360px) {
+        font-size: 22px;
+      }
     }
   }
 }

@@ -25,12 +25,6 @@
   @media (max-width: 660px) {
     padding: 50px 0;
   }
-  @media (max-width: 420px) {
-    padding: 45px 0;
-  }
-  @media (max-width: 395px) {
-    padding: 40px 0 45px;
-  }
 
   &__title {
     max-width: 1000px;
@@ -157,9 +151,6 @@
       font-size: 26px;
       margin: 0 auto;
     }
-    @media (max-width: 420px) {
-      font-size: 24px;
-    }
 
     &.small {
       max-width: 465px;
@@ -183,7 +174,6 @@
         font-size: 30px;
       }
       @media (max-width: 530px) {
-        font-size: 28px;
         max-width: 260px;
       }
     }
