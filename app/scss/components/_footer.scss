@@ -24,6 +24,9 @@
   &__left, &__right {
     max-width: 150px;
     width: 100%;
+    @media (max-width: 700px) {
+      max-width: max-content;
+    }
   }
 
   &__right {
@@ -38,7 +41,9 @@
   }
 
   &__nav {
-
+    @media (max-width: 550px) {
+      max-width: 330px;
+    }
   }
 
   &__list {
@@ -47,6 +52,9 @@
       flex-wrap: wrap;
       gap: 18px 20px;
       justify-content: center;
+    }
+    @media(max-width: 550px) {
+      gap: 14px 17px;
     }
   }
 
