@@ -5,32 +5,19 @@
   &__left, &__right {
     max-width: 160px;
     width: 100%;
+    @media (max-width: 980px) {
+      max-width: max-content;
+    }
   }
 
   &__inner {
     @include flex-between-center-gap(30);
     padding: 16px 0;
     border-bottom: 1px solid rgba($black, .24);
-    @media (max-width: 1220px) {
-      justify-content: initial;
-    }
     @media (max-width: 980px) {
       gap: 16px;
       position: relative;
       z-index: 50;
-    }
-  }
-
-  &__logo {
-    @include r($lg) {
-      width: auto;
-      height: 54px;
-    }
-    @include r($tablet) {
-      height: 50px;
-    }
-    @include r($phone) {
-      height: 47px;
     }
   }
 
@@ -51,13 +38,11 @@
     @include flex-align-center(12);
     position: relative;
     justify-content: flex-end;
-    @media (max-width: 1220px) {
-      margin-left: auto;
-    }
     @media (max-width: 980px) {
+      margin-left: auto;
       align-self: stretch;
     }
-    @include r($sm) {
+    @media (max-width: 520px) {
       display: none;
     }
   }
@@ -121,6 +106,9 @@
     background-color: $green;
     border: 1px solid transparent;
     transition: background-color .4s, color .4s, border .4s;
+    @media (max-width: 980px) {
+      padding: 10px 14px;
+    }
 
     &:hover {
       background-color: transparent;

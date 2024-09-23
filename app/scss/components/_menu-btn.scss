@@ -9,8 +9,8 @@
   position: relative;
   border-radius: 50%;
   transition: all .4s;
-  background-color: $light-gray;
-  border: 1px solid transparent;
+  background-color: $sugar;
+  border: 1px solid $black;
 
   &:hover {
     background-color: $deep-purple;
@@ -33,7 +33,7 @@
       display: flex;
     }
     @include r($sm) {
-      margin-left: auto;
+
     }
   }
 

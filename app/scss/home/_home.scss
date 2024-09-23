@@ -2,10 +2,29 @@
   background: $sugar;
   padding-top: 44px;
   padding-bottom: 64px;
+  @include r($tablet) {
+    padding-bottom: 55px;
+  }
+  @include r($phone) {
+    padding-top: 38px;
+    padding-bottom: 50px;
+  }
+  @media (max-width: 400px) {
+    padding-bottom: 45px;
+  }
 
   &__inner {
     @include flex-between-center-gap(40);
     margin-bottom: 82px;
+    @media (max-width: 890px) {
+      gap: 50px;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 52px;
+    }
+    @media (max-width: 495px) {
+      gap: 40px;
+    }
   }
 
   &__title {
@@ -15,6 +34,50 @@
     font-weight: 500;
     max-width: 705px;
     transform: translateY(-7px);
+    @media (max-width: 1300px) {
+      font-size: 74px;
+    }
+    @include r($desktop) {
+      font-size: 72px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 68px;
+    }
+    @include r($lg) {
+      font-size: 64px;
+      max-width: 380px;
+    }
+    @media (max-width: 910px) {
+      font-size: 62px;
+    }
+    @media (max-width: 890px) {
+      max-width: 560px;
+    }
+    @include r($tablet) {
+      font-size: 58px;
+    }
+    @media (max-width: 700px) {
+      font-size: 56px;
+    }
+    @media (max-width: 640px) {
+      font-size: 54px;
+    }
+    @include r($sm) {
+      font-size: 52px;
+    }
+    @media (max-width: 560px) {
+      font-size: 50px;
+    }
+    @media (max-width: 520px) {
+      font-size: 48px;
+    }
+    @media (max-width: 495px) {
+      font-size: 44px;
+      line-height: 1;
+    }
+    @include r($phone) {
+      font-size: 42px;
+    }
   }
 
   &__info {
@@ -23,11 +86,36 @@
     align-self: stretch;
     max-width: 530px;
     width: 100%;
+    @include r($desktop) {
+      max-width: 470px;
+    }
+    @media (max-width: 1060px) {
+      max-width: 450px;
+    }
+    @include r($lg) {
+      max-width: 420px;
+      gap: 30px;
+    }
+    @include r($sm) {
+      gap: 20px;
+    }
   }
 
   &__text {
     font-size: 20px;
     line-height: 1.3;
+    @media (max-width: 1060px) {
+      font-size: 19px;
+    }
+    @include r($lg) {
+      font-size: 18px;
+    }
+    @media (max-width: 520px) {
+      font-size: 17px;
+    }
+    @media (max-width: 450px) {
+      font-size: 16px;
+    }
   }
 
   &__video {
@@ -37,9 +125,42 @@
     min-height: 750px;
     background-image: url("../images/video.webp");
     box-shadow: 61px 574px 162px 0 rgba(69, 69, 69, 0.00), 39px 367px 148px 0 rgba(69, 69, 69, 0.01), 22px 207px 125px 0 rgba(69, 69, 69, 0.05), 10px 92px 92px 0 rgba(69, 69, 69, 0.09);
+    @media (max-width: 1460px) {
+      min-height: 710px;
+    }
+    @media (max-width: 1300px) {
+      min-height: 670px;
+      border-radius: 30px;
+    }
+    @include r($desktop) {
+      min-height: 625px;
+      border-radius: 24px;
+    }
+    @include r($lg) {
+      min-height: 600px;
+      border-radius: 22px;
+    }
+    @media (max-width: 910px) {
+      min-height: 570px;
+    }
+    @include r($tablet) {
+      min-height: 540px;
+    }
+    @media (max-width: 640px) {
+      min-height: 510px;
+    }
+    @media (max-width: 510px) {
+      min-height: 480px;
+    }
+    @include r($phone) {
+      margin: 0 -7px;
+      min-height: 460px;
+    }
   }
 
   &__link {
+    @include flex-center;
+
     &:hover {
       svg g path {
         fill-opacity: 1;
@@ -50,6 +171,25 @@
       svg g path {
         fill-opacity: 1;
         fill: $greenLight;
+      }
+    }
+
+    svg {
+      @media (max-width: 1060px) {
+        width: 90px;
+        height: 90px;
+      }
+      @media (max-width: 910px) {
+        width: 84px;
+        height: 84px;
+      }
+      @media (max-width: 510px) {
+        width: 76px;
+        height: 76px;
+      }
+      @media (max-width: 400px) {
+        width: 70px;
+        height: 70px;
       }
     }
   }
