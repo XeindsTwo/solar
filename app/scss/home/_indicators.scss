@@ -154,6 +154,8 @@
     }
     @include r($phone) {
       font-size: 34px;
+      transform: translateY(8px);
+      line-height: 1;
     }
     @media (max-width: 400px) {
       font-size: 32px;

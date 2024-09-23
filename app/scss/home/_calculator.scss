@@ -77,6 +77,9 @@
   &__item {
     border-left: 1px solid $gray;
     padding: 8px 0 0;
+    @media (max-width: 830px) {
+      border-left-width: 2px;
+    }
   }
 
   &__number, &__subtitle {

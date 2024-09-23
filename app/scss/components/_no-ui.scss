@@ -13,6 +13,10 @@
   top: -2px;
   right: -18px;
   transform: translateX(-50%);
+  @media (max-width: 830px) {
+    height: 8px;
+    top: -2px;
+  }
 
   &::before, &::after {
     display: none;
@@ -22,6 +26,9 @@
 .noUi-horizontal {
   height: 2px;
   cursor: pointer;
+  @media (max-width: 830px) {
+    height: 4px;
+  }
 }
 
 .noUi-target {
