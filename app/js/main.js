@@ -1,8 +1,10 @@
 import {calc} from './calc.js';
 import {bindScrollToLinks} from './scroll.js';
+import {setupMobileMenu} from './mobileMenu.js';
 
 calc();
 bindScrollToLinks();
+setupMobileMenu();
 
 new Swiper('.swiper-reviews', {
   allowTouchMove: true,
