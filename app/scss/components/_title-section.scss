@@ -44,6 +44,15 @@
 
   &.bottom {
     margin-bottom: 92px;
+    @include r($desktop) {
+      margin-bottom: 78px;
+    }
+    @include r($tablet) {
+      margin-bottom: 70px;
+    }
+    @include r($sm) {
+      margin-bottom: 60px;
+    }
   }
 
   &--small {
