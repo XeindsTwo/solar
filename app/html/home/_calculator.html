@@ -2,8 +2,8 @@
   <div class="container">
     <div class="calculator__inner">
       <div class="calculator__interact">
-        <h2 class="title-section title-section--small">Калькулятор доходности</h2>
-        <p class="calculator__subtext">Минимальная сумма вложения — 500 $</p>
+        <h2 class="title-section title-section--small" data-calculator-title></h2>
+        <p class="calculator__subtext" data-calculator-subtext></p>
         <button class="btn" type="button">
           Оставить заявку
           <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +14,7 @@
         </button>
         <div class="calculator__items">
           <div class="calculator__item">
-            <span class="calculator__subtitle">Сумма инвестирования</span>
+            <span class="calculator__subtitle" data-calculator-investment-amount></span>
             <div class="calculator__bottom">
               <span class="calculator__number" id="slider-value-money">500</span>
               <span class="calculator__attr">$</span>
@@ -22,7 +22,7 @@
             <div class="slider" id="slider_money"></div>
           </div>
           <div class="calculator__item">
-            <span class="calculator__subtitle">Срок инвестирования</span>
+            <span class="calculator__subtitle" data-calculator-investment-period></span>
             <div class="calculator__bottom">
               <span class="calculator__number" id="slider-value-mounth">23</span>
               <span class="calculator__attr">мес.</span>

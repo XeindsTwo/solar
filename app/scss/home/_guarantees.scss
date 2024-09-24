@@ -124,6 +124,7 @@
     font-family: $pangram;
     line-height: .95;
     font-weight: 500;
+    max-width: 420px;
     margin-right: auto;
     @media (max-width: 1430px) {
       font-size: 44px;

@@ -1,46 +1,95 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форма AmoCRM</title>
-    <style>
-        /* Позиционирование кнопки */
-        #formContainer {
-            position: fixed; /* Закрепляем блок на экране */
-            right: 100px;    /* Отступ от правого края */
-            top: 40%;        /* Чуть выше середины экрана */
-            z-index: 1000;   /* Устанавливаем высокий приоритет для кнопки */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма AmoCRM</title>
+  <style>
+    #formContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 500;
+      top: 50%;
+      left: 50%;
+      background-color: rgba(0, 0, 0, .35);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s, background-color .4s, visibility .4s;
+    }
 
-        /* Стили для кнопки */
-        .amo-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    #amoforms_iframe_1406498 {
+      position: static !important;
+      max-width: 400px !important;
+      margin: 0 !important;
+      width: 370px !important;
+      transition: visibility 0.4s, opacity 0.4s;
+    }
 
-        .amo-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    #formContainer.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
 </head>
 <body>
-    <!-- Контейнер для формы или кнопки -->
-    <div id="formContainer">
-        <script>
-            !function(a,m,o,c,r,m){
-                a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},
-                a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},
-                a[o+r]({id:"1406498",hash:"ae7eae7fdddca84b3bbb637b5741b509",locale:"ru"}),
-                a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}
-            }(window,0,"amo_forms_","params","load","loaded");
-        </script>
-        <script id="amoforms_script_1406498" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1726660013"></script>
-    </div>
+
+<button onclick="openForm()">Открыть форму</button>
+
+<div id="formContainer">
+  <script>
+    !function(a,m,o,c,r,m){
+      a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},
+        a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},
+        a[o+r]({id:"1406498",hash:"ae7eae7fdddca84b3bbb637b5741b509",locale:"ru"}),
+        a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}
+    }(window,0,"amo_forms_","params","load","loaded");
+  </script>
+  <script id="amoforms_script_1406498" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1726660013"></script>
+</div>
+
+<script>
+  function openForm() {
+    document.getElementById('formContainer').classList.add('active');
+    observeIframe();
+  }
+
+  document.getElementById('formContainer').addEventListener('click', function(event) {
+    const formIframe = document.getElementById('amoforms_iframe_1406498');
+    if (!formIframe.contains(event.target)) {
+      closeForm();
+    }
+  });
+
+  function closeForm() {
+    document.getElementById('formContainer').classList.remove('active');
+  }
+
+  function observeIframe() {
+    const iframe = document.getElementById('amoforms_iframe_1406498');
+
+    iframe.onload = function() {
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.addedNodes.length) {
+            mutation.addedNodes.forEach(node => {
+              if (node.textContent.includes('успешно')) {
+                closeForm();
+                observer.disconnect();
+              }
+            });
+          }
+        });
+      });
+
+      observer.observe(iframe.contentWindow.document.body, { childList: true, subtree: true });
+    };
+  }
+</script>
+
 </body>
 </html>

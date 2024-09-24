@@ -1,8 +1,17 @@
 .steps {
   .title-section {
     font-size: 48px;
+    max-width: 320px;
+    margin: 0 auto 92px;
+    @include r($desktop) {
+      margin-bottom: 78px;
+    }
+    @include r($tablet) {
+      margin-bottom: 70px;
+    }
     @include r($sm) {
       font-size: 44px;
+      margin-bottom: 60px;
     }
     @media (max-width: 560px) {
       font-size: 42px;
@@ -184,6 +193,10 @@
     }
     @include r($phone) {
       font-size: 20px;
+    }
+
+    &.short {
+      max-width: 360px;
     }
   }
 
