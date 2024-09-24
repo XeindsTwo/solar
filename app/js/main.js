@@ -33,6 +33,26 @@ fetch('./js/data.json')
   .catch(error => console.error('Error loading JSON:', error));
 
 function insertContent(data) {
+  const buttons = document.querySelectorAll('[data-btn]');
+
+  buttons.forEach(button => {
+    const textNode = button.firstChild;
+    if (textNode) {
+      textNode.textContent = data.btn;
+    }
+  });
+
+  const buttonsIcnome = document.querySelectorAll('[data-btn-income]');
+
+  buttonsIcnome.forEach(button => {
+    button.textContent = data.btn_income;
+  });
+
+  const footerNavLinks = document.querySelectorAll('[data-footer-nav]');
+  footerNavLinks.forEach((link, index) => {
+    link.textContent = data.footer.nav[index];
+  });
+
   document.querySelector('[data-home-title]').textContent = data.home.title;
   document.querySelector('[data-home-text]').textContent = data.home.info.text;
   document.querySelector('[data-steps-title]').textContent = data.steps.title;
@@ -57,8 +77,14 @@ function insertContent(data) {
 
   document.querySelector('[data-calculator-title]').textContent = data.calculator.title;
   document.querySelector('[data-calculator-subtext]').textContent = data.calculator.subtext;
+
   document.querySelector('[data-calculator-investment-amount]').textContent = data.calculator.investment_amount;
   document.querySelector('[data-calculator-investment-period]').textContent = data.calculator.investment_period;
+
+  document.querySelector('[data-calculator-end-period]').textContent = data.calculator.income.endPeriod;
+  document.querySelector('[data-calculator-daily-income]').textContent = data.calculator.income.dailyIncome;
+  document.querySelector('[data-calculator-monthly-income]').textContent = data.calculator.income.monthlyIncome;
+  document.querySelector('[data-calculator-yearly-income]').textContent = data.calculator.income.yearlyIncome;
 
   document.querySelector('[data-guarantees-title]').textContent = data.guarantees.title;
 
@@ -99,5 +125,22 @@ function insertContent(data) {
             </div>
         `;
     swiperWrapper.insertAdjacentHTML('beforeend', slide);
+  });
+
+  updateHeaderNav(data.header.nav);
+  updateMobileNav(data.header.navMobile);
+}
+
+function updateHeaderNav(navItems) {
+  const navLinks = document.querySelectorAll('[data-header-nav]');
+  navLinks.forEach((link, index) => {
+    link.textContent = navItems[index] || '';
+  });
+}
+
+function updateMobileNav(navItems) {
+  const mobileNavLinks = document.querySelectorAll('[data-header-nav-mobile]');
+  mobileNavLinks.forEach((link, index) => {
+    link.textContent = navItems[index] || '';
   });
 }

@@ -27,12 +27,14 @@ title: 'Solar Panel'
   document.querySelectorAll('.amo_form_btn').forEach(button => {
     button.addEventListener('click', () => {
       document.getElementById('formContainer').classList.add('active');
+      document.documentElement.style.overflow = 'hidden';
     });
   });
 
   document.getElementById('formContainer').addEventListener('click', (event) => {
     if (!event.target.closest('#amoforms_iframe_1406498')) {
       document.getElementById('formContainer').classList.remove('active');
+      document.documentElement.style.overflow = '';
     }
   });
 </script>
