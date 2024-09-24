@@ -38,7 +38,8 @@
 </head>
 <body>
 
-<button onclick="openForm()">Открыть форму</button>
+<button class="amo_form_btn">Открыть форму 1</button>
+<button class="amo_form_btn">Открыть форму 2</button>
 
 <div id="formContainer">
   <script>
@@ -53,42 +54,17 @@
 </div>
 
 <script>
-  function openForm() {
-    document.getElementById('formContainer').classList.add('active');
-    observeIframe();
-  }
-
-  document.getElementById('formContainer').addEventListener('click', function(event) {
-    const formIframe = document.getElementById('amoforms_iframe_1406498');
-    if (!formIframe.contains(event.target)) {
-      closeForm();
-    }
+  document.querySelectorAll('.amo_form_btn').forEach(button => {
+    button.addEventListener('click', () => {
+      document.getElementById('formContainer').classList.add('active');
+    });
   });
 
-  function closeForm() {
-    document.getElementById('formContainer').classList.remove('active');
-  }
-
-  function observeIframe() {
-    const iframe = document.getElementById('amoforms_iframe_1406498');
-
-    iframe.onload = function() {
-      const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          if (mutation.addedNodes.length) {
-            mutation.addedNodes.forEach(node => {
-              if (node.textContent.includes('успешно')) {
-                closeForm();
-                observer.disconnect();
-              }
-            });
-          }
-        });
-      });
-
-      observer.observe(iframe.contentWindow.document.body, { childList: true, subtree: true });
-    };
-  }
+  document.getElementById('formContainer').addEventListener('click', (event) => {
+    if (!event.target.closest('#amoforms_iframe_1406498')) {
+      document.getElementById('formContainer').classList.remove('active');
+    }
+  });
 </script>
 
 </body>
