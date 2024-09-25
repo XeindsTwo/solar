@@ -3,19 +3,18 @@
 }
 
 .noUi-handle.noUi-handle-lower {
-  width: 18px;
-  height: 6px;
+  width: 15px;
+  height: 15px;
   border-radius: 600px;
   border: none;
   background: $green;
   cursor: pointer;
   box-shadow: none;
-  top: -2px;
-  right: -18px;
+  top: -6px;
+  right: -14px;
   transform: translateX(-50%);
   @media (max-width: 830px) {
-    height: 8px;
-    top: -2px;
+    top: -5px;
   }
 
   &::before, &::after {

@@ -29,6 +29,7 @@ fetch('./js/data.json')
   .then(response => response.json())
   .then(data => {
     insertContent(data);
+    updateMeta(data.meta);
   })
   .catch(error => console.error('Error loading JSON:', error));
 
@@ -48,24 +49,47 @@ function insertContent(data) {
     button.textContent = data.btn_income;
   });
 
+  const buttonsInteract = document.querySelectorAll('[data-btn-interact]');
+
+  buttonsInteract.forEach(button => {
+    button.textContent = data.btn_interact;
+  });
+
+  const buttonsWatch = document.querySelectorAll('[data-btn-watch]');
+
+  buttonsWatch.forEach(button => {
+    button.textContent = data.btn_watch;
+  });
+
   const footerNavLinks = document.querySelectorAll('[data-footer-nav]');
   footerNavLinks.forEach((link, index) => {
     link.textContent = data.footer.nav[index];
   });
 
-  document.querySelector('[data-home-title]').textContent = data.home.title;
-  document.querySelector('[data-home-text]').textContent = data.home.info.text;
-  document.querySelector('[data-steps-title]').textContent = data.steps.title;
-  document.querySelector('[data-steps-number1]').textContent = data.steps.items[0].number;
-  document.querySelector('[data-steps-name1]').textContent = data.steps.items[0].name;
-  document.querySelector('[data-steps-text1]').textContent = data.steps.items[0].text;
-  document.querySelector('[data-steps-number2]').textContent = data.steps.items[1].number;
-  document.querySelector('[data-steps-name2]').textContent = data.steps.items[1].name;
-  document.querySelector('[data-steps-text2]').textContent = data.steps.items[1].text;
-  document.querySelector('[data-steps-number3]').textContent = data.steps.items[2].number;
-  document.querySelector('[data-steps-name3]').textContent = data.steps.items[2].name;
-  document.querySelector('[data-steps-text3]').textContent = data.steps.items[2].text;
+  document.querySelectorAll('[data-home-title]').forEach(element => {
+    element.textContent = data.home.title;
+  });
 
+  document.querySelectorAll('[data-home-text]').forEach(element => {
+    element.textContent = data.home.info.text;
+  });
+
+  document.querySelectorAll('[data-steps-title]').forEach(element => {
+    element.textContent = data.steps.title;
+  });
+
+  data.steps.items.forEach((step, index) => {
+    document.querySelector(`[data-steps-number${index + 1}]`).textContent = step.number;
+    document.querySelector(`[data-steps-name${index + 1}]`).textContent = step.name;
+    document.querySelector(`[data-steps-text${index + 1}]`).textContent = step.text;
+
+    const imgElement = document.querySelector(`.steps__item:nth-child(${index + 1}) img`);
+    if (imgElement) {
+      imgElement.alt = step.alt;
+    }
+  });
+
+  // Заполняем индикаторы
   document.querySelector('[data-indicators-subtitle]').textContent = data.indicators.subtitle;
   document.querySelector('[data-indicators-title]').textContent = data.indicators.title;
 
@@ -75,11 +99,17 @@ function insertContent(data) {
     document.querySelector(`[data-indicators-icon${index + 1}]`).src = item.icon;
   });
 
-  document.querySelector('[data-calculator-title]').textContent = data.calculator.title;
-  document.querySelector('[data-calculator-subtext]').textContent = data.calculator.subtext;
+  document.querySelectorAll('[data-calculator-title]').forEach(element => {
+    element.textContent = data.calculator.title;
+  });
+
+  document.querySelectorAll('[data-calculator-subtext]').forEach(element => {
+    element.textContent = data.calculator.subtext;
+  });
 
   document.querySelector('[data-calculator-investment-amount]').textContent = data.calculator.investment_amount;
   document.querySelector('[data-calculator-investment-period]').textContent = data.calculator.investment_period;
+  document.querySelector('[data-calculator-investment-mounth]').textContent = data.calculator.investment_mounth;
 
   document.querySelector('[data-calculator-end-period]').textContent = data.calculator.income.endPeriod;
   document.querySelector('[data-calculator-daily-income]').textContent = data.calculator.income.dailyIncome;
@@ -88,12 +118,18 @@ function insertContent(data) {
 
   document.querySelector('[data-guarantees-title]').textContent = data.guarantees.title;
 
-  data.guarantees.items.forEach((item, index) => {
-    document.querySelector(`[data-guarantees-name${index + 1}]`).textContent = item.name;
-    document.querySelector(`[data-guarantees-text${index + 1}]`).textContent = item.text;
-  });
+  document.querySelector('[data-guarantees-name1]').textContent = data.guarantees.items[0].name;
+  document.querySelector('[data-guarantees-text1]').textContent = data.guarantees.items[0].text;
+  document.querySelector('.guarantees__item img[src="images/passive.webp"]').alt = data.guarantees.items[0].alt;
+
+  document.querySelector('[data-guarantees-name2]').textContent = data.guarantees.items[1].name;
+  document.querySelector('[data-guarantees-text2]').textContent = data.guarantees.items[1].text;
+  document.querySelector('.guarantees__item img[src="images/support.webp"]').alt = data.guarantees.items[1].alt;
 
   document.querySelector('[data-guarantees-name3]').textContent = data.guarantees.items[2].name;
+  document.querySelector('[data-guarantees-text3]').textContent = data.guarantees.items[2].text;
+  document.querySelector('[data-guarantees-image-big]').alt = data.guarantees.items[2].alt;
+  document.querySelector('[data-guarantees-image-big-mobile]').alt = data.guarantees.items[2].alt;
 
   document.querySelector('[data-reviews-title]').textContent = data.reviews.title;
   document.querySelector('[data-reviews-description]').textContent = data.reviews.description;
@@ -143,4 +179,13 @@ function updateMobileNav(navItems) {
   mobileNavLinks.forEach((link, index) => {
     link.textContent = navItems[index] || '';
   });
+}
+
+function updateMeta(metaData) {
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute('content', metaData.description);
+  }
+
+  document.title = metaData.name_site;
 }

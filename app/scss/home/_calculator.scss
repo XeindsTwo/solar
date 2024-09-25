@@ -17,15 +17,29 @@
       min-height: 500px;
     }
     @media (max-width: 830px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       min-height: auto;
-      gap: 40px;
+      gap: 60px;
     }
     @include r($sm) {
       gap: 35px;
     }
     @include r($phone) {
       gap: 30px;
+    }
+  }
+
+  &__top {
+    @media (max-width: 830px) {
+      display: none;
+    }
+    &.mobile {
+      display: none;
+      @media (max-width: 830px) {
+        margin-right: auto;
+        display: block;
+        order: 1;
+      }
     }
   }
 
@@ -70,7 +84,7 @@
       margin-bottom: 6px;
     }
     @media (max-width: 830px) {
-      margin-top: 60px;
+      margin-top: -20px;
     }
   }
 
@@ -107,7 +121,7 @@
 
   &__bottom {
     @include flex-between-center-gap(16);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   &__number, &__attr {
